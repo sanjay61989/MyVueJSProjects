@@ -1,0 +1,16 @@
+﻿<h3>Component 1</h3>
+<div id="app-7">
+    <ol>
+        <todo-item v-for="item in groceryList"
+                   v-bind:todo="item"
+                   v-bind:key="item.id">
+        </todo-item>
+    </ol>
+</div>
+
+<h3>Life cycle of vue js</h3>
+<div id="app-8">
+    <h4>{{a}}</h4>    
+    <input class="form-control" style="margin-bottom:10px" v-model="a">
+    <button class="btn btn-danger" v-on:click="destroy">Destroy vue instance</button>
+</div>
