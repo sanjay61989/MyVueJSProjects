@@ -1,4 +1,5 @@
-﻿Vue.component('todo-item', {
+﻿//vue component example
+Vue.component('todo-item', {
     props: ['todo'],
     template: '<li>{{ todo.text }}</li>'
 })
@@ -14,6 +15,7 @@ var app7 = new Vue({
     }
 })
 
+//life cycle of vue 
 var app8 = new Vue({
     el: "#app-8",
     data: {

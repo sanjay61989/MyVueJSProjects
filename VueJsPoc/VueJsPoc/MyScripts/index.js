@@ -18,7 +18,7 @@ var app3 = new Vue({
         seen: true
     },
     methods: {
-        reverseMessage: function () {
+        showMessage: function () {
             this.seen = !this.seen;
         }
     }

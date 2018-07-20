@@ -1,33 +1,45 @@
-﻿<h3>App 1</h3>
-<div id="app">
-    {{ message }}
+﻿
+<div class="Divgrid">
+    <h3>App 1 : Hello World</h3>
+    <div id="app">
+        {{ message }}
+    </div>
 </div>
 
-<h3>App 2</h3>
-<div id="app-2">
-    <span v-bind:title="message">
-        Hover your mouse over me for a few seconds
-        to see my dynamically bound title!
-    </span>
+<div class="Divgrid">
+    <h3>App 2 : tooltip example using v-bind:title </h3>
+    <div id="app-2">
+        <span v-bind:title="message">
+            Hover your mouse over me for a few seconds
+            to see my dynamically bound title!
+        </span>
+    </div>
 </div>
 
-<h3>App 3</h3>
-<div id="app-3">
-    <span v-if="seen">Now you see me</span>
-    <button v-on:click="reverseMessage">{{!seen ? 'Show Button' : 'Hide Button'}}</button>
+
+<div class="Divgrid">
+    <h3>App 3 : show and hide using v-if and v-on:click</h3>
+    <div id="app-3">
+        <span v-if="seen">Now you see me</span>
+        <button v-on:click="showMessage">{{!seen ? 'Show Mesage' : 'Hide Mesage'}}</button>
+    </div>
 </div>
 
-<h3>App 4</h3>
-<div id="app-4">
-    <ol>
-        <li v-for="todo in todos">
-            {{ todo.text }}
-        </li>
-    </ol>
+<div class="Divgrid">
+    <h3>App 4 : ordered list using v-for</h3>
+    <div id="app-4">
+        <ol>
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ol>
+    </div>
 </div>
 
-<h3>App 5</h3>
-<div id="app-5">
-    <p>{{ message }}</p>
-    <input v-model="message">
+<div class="Divgrid">
+    <h3>App 5 : two binding using v-model</h3>
+    <div id="app-5">
+        <p>{{ message }}</p>
+        <input v-model="message">
+    </div>
 </div>
