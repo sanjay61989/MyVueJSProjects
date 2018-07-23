@@ -4,8 +4,8 @@ Vue.component('todo-item', {
     template: '<li>{{ todo.text }}</li>'
 })
 
-var app7 = new Vue({
-    el: '#app-7',
+var app6 = new Vue({
+    el: '#app-6',
     data: {
         groceryList: [
           { id: 0, text: 'Vegetables' },
@@ -16,8 +16,8 @@ var app7 = new Vue({
 })
 
 //life cycle of vue 
-var app8 = new Vue({
-    el: "#app-8",
+var app7 = new Vue({
+    el: "#app-7",
     data: {
         a: 'hello'        
     },
@@ -52,3 +52,22 @@ var app8 = new Vue({
         }
     }
 })
+
+
+
+var app8 = new Vue({
+    el: '#app-8',
+    data: {
+        users: []
+    },
+    methods: {
+        loadUsers: function () {
+            Vue.http.get('/Home/GetUsers').then(res => {
+                this.users = res.body;
+                console.log(this.users);
+            }, err => {
+                console.log(err)
+            });
+        }
+    }
+});

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Js POC</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />    
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
@@ -27,6 +27,9 @@
                     <li>
                         @Html.ActionLink("Vue Components and life cycle", "VueComponent", "Home", null, new { })
                     </li>
+                    <li>
+                        @Html.ActionLink("Vue Table", "VueTable", "Home", null, new { })
+                    </li>
                 </ul>
             </div>
         </div>
@@ -35,10 +38,14 @@
     <div class="container body-content">
         @RenderBody()
     </div>
-    <script src="~/Scripts/vue.min.js"></script>
-    <script src="~/MyScripts/index.js"></script>
-    <script src="~/MyScripts/VueComponent.js"></script>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+    <script src="~/Scripts/vue.min.js"></script>
+    <script src="https://unpkg.com/iview/dist/iview.min.js"></script>
+    <script src="//unpkg.com/iview/dist/locale/en-US.js"></script>
+    <script src="~/MyScripts/index.js"></script>
+    <script src="~/MyScripts/VueComponent.js"></script>
+    <script src="~/MyScripts/Table.js"></script>    
 </body>
 </html>

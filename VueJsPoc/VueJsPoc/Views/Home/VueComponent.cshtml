@@ -1,7 +1,7 @@
 ﻿
 <div class="Divgrid">
-    <h3>App 7 - Vue Component : Ordered list using vue component</h3>
-    <div id="app-7">
+    <h3>App 6 - Vue Component : Ordered list using vue component</h3>
+    <div id="app-6">
         <ol>
             <todo-item v-for="item in groceryList"
                        v-bind:todo="item"
@@ -11,10 +11,41 @@
     </div>
 </div>
 <div class="Divgrid">
-    <h3>Life cycle of vue js<br />To see press F12 to see life cycle</h3>
-    <div id="app-8">
+    <h3>App 7 : Life cycle of vue js<br />To see press F12 to see life cycle</h3>
+    <div id="app-7">
         <h4>{{a}}</h4>
         <input class="form-control" style="margin-bottom:10px" v-model="a">
         <button class="btn btn-danger" v-on:click="destroy">Destroy vue instance</button>
+    </div>
+</div>
+
+<div class="Divgrid">
+    <h3>App 8 : Vue Http Get</h3>
+    <div id="app-8">
+        <div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <a href="#"
+                       class="btn btn-success"
+                       v-on:click="loadUsers()">Load Users</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3>User List</h3>
+                    <ul>
+                        <li v-for="user in users">
+                            {{ user.Name }} - {{ user.Age }}
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <pre>{{ $data | json }}</pre>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
