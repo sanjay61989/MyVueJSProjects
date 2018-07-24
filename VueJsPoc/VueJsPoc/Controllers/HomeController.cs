@@ -53,5 +53,11 @@ namespace VueJsPoc.Controllers
             };
             return Json(students, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public ActionResult InsertUsers(List<Student> data)
+        {
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
     }
 }

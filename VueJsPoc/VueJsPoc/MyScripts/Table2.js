@@ -103,7 +103,16 @@ var EditTableComponent = Vue.extend({
             this.data6[index].RollNo = this.rowRollNo;
 
             this.showEditData = false;
+        },
+        submitData(data) {
+            console.log("table data is ");
+            Vue.http.post('/Home/InsertUsers',data).then(res => {
+                console.log(res.body);
+            }, err => {
+                console.log(err);
+            });            
         }
+        
     }
 })
 new EditTableComponent().$mount('#app-11')
