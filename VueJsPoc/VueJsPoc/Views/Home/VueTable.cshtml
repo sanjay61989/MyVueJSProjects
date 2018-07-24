@@ -1,7 +1,7 @@
 ﻿<link href="//unpkg.com/iview/dist/styles/iview.css" rel="stylesheet" />
 <style>
-    body{
-        margin-top:50px;
+    body {
+        margin-top: 50px;
     }
 </style>
 <div class="Divgrid">
@@ -14,8 +14,14 @@
 
 
 <div class="Divgrid">
-    <h3>App 10 : Vue Table</h3>
+    <h3>App 10 : Vue Table with action on a row like view and delete</h3>
     <div id="app-10" style="margin-top:10px;">
-        <i-table border :columns="columns1" :data="data1"></i-table>
+        <div style="margin-bottom:10px;">
+            Name: <input type="text" v-model="rowName" />
+            Roll No: <input type="tel" v-model="rowRollNo" />
+            Age: <input type="tel" v-model="rowAge" />
+            <button v-on:click="pushData()">Add row data</button>
+        </div>
+        <i-table border :columns="columns7" :data="data6"></i-table>
     </div>
 </div>

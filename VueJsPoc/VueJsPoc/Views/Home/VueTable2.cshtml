@@ -1,0 +1,19 @@
+﻿<link href="//unpkg.com/iview/dist/styles/iview.css" rel="stylesheet" />
+<style>
+    body {
+        margin-top: 50px;
+    }
+</style>
+
+<div class="Divgrid">
+    <h3>App 11 : Vue Table with action on a row like edit and delete</h3>
+    <div id="app-11" style="margin-top:10px;">
+        <div v-show="showEditData" style="margin-bottom:10px;">
+            Name: <input type="text" v-model="rowName" />            
+            Age: <input type="tel" v-model="rowAge" />
+            Roll No: <input type="tel" v-model="rowRollNo" />
+            <button v-on:click="editData()">Edit row data</button>
+        </div>
+        <i-table border :columns="columns7" :data="data6"></i-table>
+    </div>
+</div>

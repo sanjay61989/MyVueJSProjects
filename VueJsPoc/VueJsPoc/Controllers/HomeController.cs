@@ -22,6 +22,11 @@ namespace VueJsPoc.Controllers
             return View();
         }
 
+        public ActionResult VueTable2()
+        {
+            return View();
+        }
+
         [HttpGet]
         public ActionResult GetUsers()
         {

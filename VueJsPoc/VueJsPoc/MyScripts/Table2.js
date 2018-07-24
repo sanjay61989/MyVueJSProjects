@@ -1,38 +1,6 @@
 ﻿Vue.use(VueResource)
 iview.lang('en-US');
 
-var Component1 = Vue.extend({
-    beforeCreate: function () {
-        Vue.http.get('/Home/GetUsers').then(res => {
-            this.data1 = res.body;
-        }, err => {
-            console.log(err);
-        });
-    },
-    data () {
-        return {
-            columns1: [
-                {
-                    title: 'Name',
-                    key: 'Name'
-                },
-                {
-                    title: 'Age',
-                    key: 'Age'
-                },
-                {
-                    title: 'Roll No',
-                    key: 'RollNo'
-                }
-            ],
-            data1: []
-        }
-    }
-})
-new Component1().$mount('#app-9')
-
-
-
 var EditTableComponent = Vue.extend({
     beforeCreate: function () {
         Vue.http.get('/Home/GetUsers').then(res => {
@@ -43,6 +11,11 @@ var EditTableComponent = Vue.extend({
     },
     data () {
         return {
+            data6: [],
+            rowName: '',
+            rowAge: '',
+            rowRollNo: '',
+            showEditData: false,
             columns7: [
                 {
                     title: 'Name',
@@ -54,7 +27,7 @@ var EditTableComponent = Vue.extend({
                                     type: 'person'
                                 }
                             }),
-                            h('strong', ' '+params.row.Name)
+                            h('strong', ' ' + params.row.Name)
                         ]);
                     }
                 },
@@ -85,10 +58,10 @@ var EditTableComponent = Vue.extend({
                                 },
                                 on: {
                                     click: () => {
-                                        this.show(params.index)
+                                        this.show(params.index, params)
                                     }
                                 }
-                            }, 'View'),
+                            }, 'Edit'),
                             h('Button', {
                                 props: {
                                     type: 'error',
@@ -96,37 +69,41 @@ var EditTableComponent = Vue.extend({
                                 },
                                 on: {
                                     click: () => {
-                                        this.remove(params.index)
+                                        this.remove(params.index, params)
                                     }
                                 }
                             }, 'Delete')
                         ]);
                     }
                 }
-            ],
-            data6: [],
-            rowName:"vinod",
-            rowAge:31,
-            rowRollNo:1,
+            ]
         }
     },
     methods: {
-        show (index) {
-            this.$Modal.info({
-                title: 'User Info',
-                content: `Name：${this.data6[index].Name}<br>Age：${this.data6[index].Age}<br>Roll No：${this.data6[index].RollNo}`
-            })
+        show (index, params) {
+            this.showEditData = true
+
+            //assgin to input fields
+            this.rowName = this.data6[index].Name;
+            this.rowRollNo = this.data6[index].RollNo;
+            this.rowAge = this.data6[index].Age;
+
+            //save current selection
+            this.editRowIndex = index;
+            this.editParams = params;
         },
-        remove (index) {
+        remove (index, params) {
             this.data6.splice(index, 1);
         },
-        pushData() {
-            this.data6.push({
-                Name: this.rowName,
-                Age: this.rowAge,
-                RollNo: this.rowRollNo
-            })
+        editData() {
+            var index = this.editRowIndex;        
+
+            this.data6[index].Name = this.rowName;
+            this.data6[index].Age = this.rowAge
+            this.data6[index].RollNo = this.rowRollNo;
+
+            this.showEditData = false;
         }
     }
 })
-new EditTableComponent().$mount('#app-10')
+new EditTableComponent().$mount('#app-11')
