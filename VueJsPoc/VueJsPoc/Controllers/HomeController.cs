@@ -57,7 +57,7 @@ namespace VueJsPoc.Controllers
         [HttpPost]
         public ActionResult InsertUsers(List<Student> data)
         {
-            return Json(data, JsonRequestBehavior.AllowGet);
+            return Json(new { data, message = "Successfully received" }, JsonRequestBehavior.AllowGet);
         }
     }
 }
